@@ -1,10 +1,11 @@
 const {
   listContacts,
-  getContactById,
-  //   removeContact,
-  //   addContact,
+  // getContactById,
+  // removeContact,
+  addContact,
 } = require("./contacts");
-listContacts();
-getContactById("e6ywwRe4jcqxXfCZOj_1e");
+
+// getContactById();
 // removeContact();
-// addContact();
+addContact("John Doe", "john@example.com", "123456789");
+listContacts();
