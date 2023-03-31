@@ -1,5 +1,11 @@
 [
 	{
+		"id": "o1eYVA84JUqcyyF7Mnmut",
+		"name": "Mango",
+		"email": "mango@gmail.com",
+		"phone": "322-22-22"
+	},
+	{
 		"id": "ocbqhbtay6wgEXwdzxFyC",
 		"name": "Juliya",
 		"email": "googies@dsd.com",
@@ -34,12 +40,6 @@
 		"name": "John Doe",
 		"email": "john@example.com",
 		"phone": "123456789"
-	},
-	{
-		"id": "qdggE76Jtbfd9eWJHrssH",
-		"name": "Chaim Lewis",
-		"email": "dui.in@egetlacus.ca",
-		"phone": "(294) 840-6685"
 	},
 	{
 		"id": "drsAJ4SHPYqZeG-83QTVW",
