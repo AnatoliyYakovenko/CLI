@@ -4,10 +4,18 @@ const path = require("path");
 
 const contactsPath = path.join(__dirname, "./db/contacts.json");
 
-async function listContacts() {
+async function getContacts() {
   try {
     const data = await fs.readFile(contactsPath);
-    const contactList = JSON.parse(data);
+    return JSON.parse(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function listContacts() {
+  try {
+    const contactList = await getContacts();
     console.table(contactList);
   } catch (error) {
     console.log(error);
@@ -16,10 +24,9 @@ async function listContacts() {
 
 async function getContactById(contactId) {
   try {
-    const data = await fs.readFile(contactsPath);
-    const contactList = JSON.parse(data);
+    const contactList = await getContacts();
     const contact = contactList.find((el) => el.id === contactId);
-    console.log(contact);
+    console.table(contact);
   } catch (error) {
     console.log("Контакт з цим id не знайдено!");
   }
@@ -27,8 +34,7 @@ async function getContactById(contactId) {
 
 async function removeContact(contactId) {
   try {
-    const data = await fs.readFile(contactsPath);
-    const contactList = JSON.parse(data);
+    const contactList = await getContacts();
     const removedContactList = contactList.filter((el) => el.id !== contactId);
     if (removedContactList.length < contactList.length) {
       fs.writeFile(contactsPath, JSON.stringify(removedContactList), (err) => {
@@ -46,8 +52,7 @@ async function removeContact(contactId) {
 
 async function addContact(name, email, phone) {
   try {
-    const data = await fs.readFile(contactsPath);
-    const contactList = JSON.parse(data);
+    const contactList = await getContacts();
     const addedContact = { id: nanoid(), name, email, phone };
     const updatedContactList = JSON.stringify(
       [addedContact, ...contactList],

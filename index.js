@@ -5,9 +5,9 @@ const {
   addContact,
 } = require("./contacts");
 
-getContactById("1DEXoP8AuCGYc1YgoQ6hw");
+// getContactById("QiGN7JvI0WlsTapSnBfbo");
 
 // addContact("John Doe", "john@example.com", "123456789");
 // listContacts();
-// removeContact("XsuAH-rQAazgrjjOPHLwg");
+// removeContact("ETXXev463JPMKWyXVIQ0C");
 // listContacts();
